@@ -12,7 +12,7 @@ You can use the pioneer3at robot. It has a camera and a hokuyo laser range finde
 In this demo, automatically 4 pioneer3at robots will be spawned.  
 You can see topics which will be published from robots with a ros command "rostopic list".  
 
-## Controling robots with joy stick.  
+## Controlling robots with joy stick.  
 For this demo, I prepared a ros package "teleop_joy".  
 With teleop_joy, you can controll a robot by using a game coontoller.
 You can use just only the left analog stick.
