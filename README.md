@@ -18,10 +18,10 @@ A playable sample package of RoboCup 2016 Rescue Virtual Robot League Fields wit
     $ cd ~/RoboCup2016RVRL_Demo/src  
     $ source install/setup.bash  
     $ source setup.gazebo_model_path  
-    $ roslaunch RC2016RVRL RC2016RVRL_Final_RUN2_RETRY.launch  
+    $ roslaunch RC2016RVRL RC2016VRL_Final_RUN2_RETRY.launch  
     $ roslaunch teleop_joy teleop_joy  
 
 ## How to stop the simulation.
-    (On the terminal which you did "roslauch RC2016RVRL RC2016RVRL_Final_RUN2_RETRY.launch")
+    (On the terminal which you did "roslauch RC2016RVRL RC2016VRL_Final_RUN2_RETRY.launch")
     * Push CTRL-Z  
     $ killall -9 roscore gzserver gzclient  
