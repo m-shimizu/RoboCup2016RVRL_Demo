@@ -7,6 +7,11 @@ A playable sample package of RoboCup 2016 Rescue Virtual Robot League Fields wit
     * https://github.com/m-shimizu/RoboCup2016RVRL_FieldModels  
     * models from https://github.com/m-shimizu/RoboCupRescuePackage
 
+## Robots  
+You can use pioneer3at robot. It has a camera and a hokuyo laser range finder.  
+In this demo, automatically 4 pioneer3at robots are spawned.  
+You can see topics which are published from robots by a ros command "rostopic list".  
+
 ## How to setup.  
     $ cd  
     $ git clone https://github.com/m-shimizu/RoboCup2016RVRL_Demo  
@@ -16,11 +21,20 @@ A playable sample package of RoboCup 2016 Rescue Virtual Robot League Fields wit
     $ catkin_make install  
 
 ## How to play.  
+You need two terminals.
+  At Terminal1:  
     $ cd ~/RoboCup2016RVRL_Demo/src  
     $ source install/setup.bash  
     $ source setup.gazebo_model_path  
     $ roslaunch rc2016rvrl RC2016VRL_Final_RUN2_RETRY.launch  
-    $ roslaunch teleop_joy teleop_joy  
+
+Now, you can see 4 robots on a field.  
+Next you have to execute a robot controller.  
+
+  At Terminal2:  
+    $ cd ~/RoboCup2016RVRL_Demo/src  
+    $ source install/setup.bash  
+    $ roslaunch teleop_joy teleop_joy robot_name:=robot1  
 
 ## How to stop the simulation.
     (On the terminal which you did "roslauch rc2016rvrl RC2016VRL_Final_RUN2_RETRY.launch")
