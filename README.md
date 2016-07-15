@@ -39,7 +39,7 @@ Next you have to execute a robot controller.
   At Terminal2:  
     $ cd ~/RoboCup2016RVRL_Demo  
     $ source install/setup.bash  
-    $ roslaunch teleop_joy teleop_joy robot_name:=robot1  
+    $ roslaunch teleop_joy teleop_joy.launch robot_name:=robot1  
 
 ## How to stop the simulation.
     (On the terminal which you did "roslauch rc2016rvrl RC2016VRL_Final_RUN2_RETRY.launch")
