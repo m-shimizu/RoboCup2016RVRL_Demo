@@ -28,7 +28,7 @@ You can use just only the left analog stick.
 ## How to play.  
 You need two terminals.
   At Terminal1:  
-    $ cd ~/RoboCup2016RVRL_Demo/src  
+    $ cd ~/RoboCup2016RVRL_Demo  
     $ source install/setup.bash  
     $ source setup.gazebo_model_path  
     $ roslaunch rc2016rvrl RC2016VRL_Final_RUN2_RETRY.launch  
@@ -37,7 +37,7 @@ Now, you can see 4 robots on a field.
 Next you have to execute a robot controller.  
 
   At Terminal2:  
-    $ cd ~/RoboCup2016RVRL_Demo/src  
+    $ cd ~/RoboCup2016RVRL_Demo  
     $ source install/setup.bash  
     $ roslaunch teleop_joy teleop_joy robot_name:=robot1  
 
