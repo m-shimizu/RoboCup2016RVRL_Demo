@@ -13,23 +13,23 @@ private:
   ros::NodeHandle _nh;
   int             _linear, _angular;
   double          _scale_l, _scale_a;
-  std::string     _cmd_vel_tpc;
+  std::string     _tpc_cmd_vel, _tpc_joy;
   ros::Publisher  twist_pub;
   ros::Subscriber joy_sub;
 };
 
 
 TeleopJoy::TeleopJoy():
-  _linear(1),
-  _angular(2)
+  _linear(1), _angular(2), _scale_l(0.7), _scale_a(1.2)
 {
   _nh.param("axis_linear", _linear, _linear);
   _nh.param("axis_angular", _angular, _angular);
   _nh.param("scale_angular", _scale_a, _scale_a);
   _nh.param("scale_linear", _scale_l, _scale_l);
-  _nh.param("cmd_vel", _cmd_vel_tpc, std::string("/cmd_vel"));
-  twist_pub = _nh.advertise<geometry_msgs::Twist>(_cmd_vel_tpc.c_str(), 1);
-  joy_sub = _nh.subscribe<sensor_msgs::Joy>("joy", 10
+  _nh.param("cmd_vel", _tpc_cmd_vel, std::string("/cmd_vel"));
+  _nh.param("joy", _tpc_joy, std::string("/joy"));
+  twist_pub = _nh.advertise<geometry_msgs::Twist>(_tpc_cmd_vel.c_str(), 1);
+  joy_sub = _nh.subscribe<sensor_msgs::Joy>(_tpc_joy.c_str(), 10
                                          , &TeleopJoy::JoyCB, this);
 }
 

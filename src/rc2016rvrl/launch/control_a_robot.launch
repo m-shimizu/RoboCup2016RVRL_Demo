@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <arg name="robot_name" default="robot2"/>
+
+  <group ns="$(arg robot_name)">
+  <include file="$(find hector_mapping)/launch/mapping_default.launch">
+    <!--
+    <arg name="odom_frame" default="base_link"/>
+    <arg name="odom_frame" default="world"/>
+    -->
+    <arg name="odom_frame" default="odom"/>
+    <arg name="scan_topic" default="hokuyo"/>
+  </include>
+
+  <include file="$(find hector_geotiff)/launch/geotiff_mapper.launch">
+    <arg name="trajectory_publish_rate" value="4"/> 
+  </include>
+  </group>
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(env HOME)/RoboCup2016RVRL_Demo/rviz/$(arg robot_name).rviz"/>
+
+  <include file="$(find teleop_joy)/launch/teleop_joy.launch">
+    <arg name="robot_name" value="$(arg robot_name)"/>
+  </include>
+  <!--
+  <node name="teleop_joy" pkg="teleop_joy" type="teleop_twist_keyboard.py" launch-prefix="xterm -e"/>
+  -->
+</launch>
