@@ -5,6 +5,7 @@ A playable sample package of RoboCup 2016 Rescue Virtual Robot League Fields wit
     * https://github.com/m-shimizu/p3at_with_sensors_for_gazebo_ros  
       (it includes https://github.com/nkoenig/pioneer3at_demo)  
     * https://github.com/m-shimizu/RoboCup2016RVRL_FieldModels  
+    * models from https://github.com/m-shimizu/RoboCupRescuePackage
 
 ## How to setup.  
     $ cd  
