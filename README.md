@@ -30,7 +30,7 @@ You need two terminals.
     $ source setup.gazebo_model_path  
     $ roslaunch rc2016rvrl RC2016VRL_Final_RUN2_RETRY.launch  
 
-  You can choise other worlds from followings:
+  You can choose other worlds from followings:
 
     * RC2016VRL_Preliminary1.launch  
     * RC2016VRL_Preliminary2.launch  
@@ -48,7 +48,7 @@ Next you have to execute a robot controller.
     $ source install/setup.bash  
     $ roslaunch rc2016rvrl control_a_robot.launch robot_name:=robot1 joystick:=0  
 
-You can chose robot2, robot3 or robot4 with robot_name:=robot2, robot_name:=robot3 or robot_name:=robot4 .
+You can choose robot2, robot3 or robot4 with robot_name:=robot2, robot_name:=robot3 or robot_name:=robot4 .
 
 ## Controlling robots with joy stick.  
 For this demo, I prepared a ros package "teleop_joy".  
