@@ -1,30 +1,25 @@
 <?xml version="1.0"?>
 
 <launch>
+  <arg name="robot_name" default="robot1"/>
+  <arg name="joystick" default="0"/>
 
-  <arg name="robot_name" default="robot2"/>
-
-  <group ns="$(arg robot_name)">
-  <include file="$(find hector_mapping)/launch/mapping_default.launch">
-    <!--
-    <arg name="odom_frame" default="base_link"/>
-    <arg name="odom_frame" default="world"/>
-    -->
-    <arg name="odom_frame" default="odom"/>
-    <arg name="scan_topic" default="hokuyo"/>
-  </include>
-
-  <include file="$(find hector_geotiff)/launch/geotiff_mapper.launch">
-    <arg name="trajectory_publish_rate" value="4"/> 
-  </include>
-  </group>
-
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(env HOME)/RoboCup2016RVRL_Demo/rviz/$(arg robot_name).rviz"/>
-
-  <include file="$(find teleop_joy)/launch/teleop_joy.launch">
+  <include file="$(find rc2016rvrl)/launch/hector_mapping_for_a_robot.launch">
     <arg name="robot_name" value="$(arg robot_name)"/>
   </include>
-  <!--
-  <node name="teleop_joy" pkg="teleop_joy" type="teleop_twist_keyboard.py" launch-prefix="xterm -e"/>
-  -->
+
+  <group ns="$(arg robot_name)">
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(env HOME)/RoboCup2016RVRL_Demo/rviz/$(arg robot_name).rviz"/>
+  </group>
+
+  <group ns="$(arg robot_name)" if="$(arg joystick)">
+    <include file="$(find teleop_joy)/launch/teleop_joy.launch">
+      <arg name="robot_name" value="$(arg robot_name)"/>
+    </include>
+  </group>
+
+  <group ns="$(arg robot_name)" unless="$(arg joystick)">
+    <node name="teleop" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" args="cmd_vel:=/$(arg robot_name)/cmd_vel" launch-prefix="xterm -e"/>
+  </group>
+
 </launch>

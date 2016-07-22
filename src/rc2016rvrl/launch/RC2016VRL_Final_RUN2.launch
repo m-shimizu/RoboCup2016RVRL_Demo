@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<launch>
+
+  <param name="use_sim_time" value="true"/>
+  
+  <arg name="paused" default="false"/>
+  <arg name="gui" default="true"/>
+  <arg name="verbose" default="false"/>
+  <arg name="world_name" default="RC2016VRL_Final_RUN2.world"/>
+
+  <!-- Launch gazebo -->
+  <node name="gazebo" pkg="gazebo_ros" type="gzserver" respawn="false" output="screen" args="$(find rc2016rvrl)/worlds/$(arg world_name)"/>
+  <node name="gazebo_gui" pkg="gazebo_ros" type="gzclient" respawn="false" output="screen"/>
+
+  <include file="$(find rc2016rvrl)/launch/spawn_p3at_RC2016.launch">
+    <arg name="robot_name" value="robot1"/>
+    <arg name="pose_x" value="-24"/> 
+    <arg name="pose_y" value="  3"/>
+    <arg name="pose_yaw" default="3.14"/>
+  </include>
+
+  <include file="$(find rc2016rvrl)/launch/spawn_p3at_RC2016.launch">
+    <arg name="robot_name" value="robot2"/>
+    <arg name="pose_x" value="-24"/> 
+    <arg name="pose_y" value="  1"/>
+    <arg name="pose_yaw" default="3.14"/>
+  </include>
+
+  <include file="$(find rc2016rvrl)/launch/spawn_p3at_RC2016.launch">
+    <arg name="robot_name" value="robot3"/>
+    <arg name="pose_x" value="-24"/> 
+    <arg name="pose_y" value=" -1"/>
+    <arg name="pose_yaw" default="3.14"/>
+  </include>
+
+  <include file="$(find rc2016rvrl)/launch/spawn_p3at_RC2016.launch">
+    <arg name="robot_name" value="robot4"/>
+    <arg name="pose_x" value="-24"/> 
+    <arg name="pose_y" value=" -3"/>
+    <arg name="pose_yaw" default="3.14"/>
+  </include>
+
+</launch>
+
+
