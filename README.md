@@ -23,7 +23,7 @@ You can see topics which will be published from robots with a ros command "rosto
 ## How to play.  
 You need two terminals.  
 
-  * At Terminal1:  
+  At Terminal1:  
 
     $ cd ~/RoboCup2016RVRL_Demo  
     $ source install/setup.bash  
@@ -31,6 +31,7 @@ You need two terminals.
     $ roslaunch rc2016rvrl RC2016VRL_Final_RUN2_RETRY.launch  
 
   You can choise other worlds from followings:
+
     * RC2016VRL_Preliminary1.launch  
     * RC2016VRL_Preliminary2.launch  
     * RC2016VRL_Preliminary3.launch  
@@ -41,7 +42,7 @@ You need two terminals.
 Now, you can see 4 robots on a field.  
 Next you have to execute a robot controller.  
 
-  * At Terminal2:  
+  At Terminal2:  
 
     $ cd ~/RoboCup2016RVRL_Demo  
     $ source install/setup.bash  
