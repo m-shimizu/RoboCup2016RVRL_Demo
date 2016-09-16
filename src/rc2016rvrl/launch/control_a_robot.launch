@@ -12,7 +12,10 @@
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(env HOME)/RoboCup2016RVRL_Demo/rviz/$(arg robot_name).rviz"/>
   </group>
 
+  <!-- Not working with Name Spacei ..... ?
   <group ns="$(arg robot_name)" if="$(arg joystick)">
+  -->
+  <group if="$(arg joystick)">
     <include file="$(find teleop_joy)/launch/teleop_joy.launch">
       <arg name="robot_name" value="$(arg robot_name)"/>
     </include>
