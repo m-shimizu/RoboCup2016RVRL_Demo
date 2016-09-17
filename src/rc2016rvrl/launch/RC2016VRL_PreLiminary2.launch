@@ -6,7 +6,7 @@
   <arg name="paused" default="false"/>
   <arg name="gui" default="true"/>
   <arg name="verbose" default="false"/>
-  <arg name="world_name" default=" RC2016VRL_PreLiminary2.world"/>
+  <arg name="world_name" default="RC2016VRL_PreLiminary2.world"/>
 
   <!-- Launch gazebo -->
   <node name="gazebo" pkg="gazebo_ros" type="gzserver" respawn="false" output="screen" args="$(find rc2016rvrl)/worlds/$(arg world_name)"/>
