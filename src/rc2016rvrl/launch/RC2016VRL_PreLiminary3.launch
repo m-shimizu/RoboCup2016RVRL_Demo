@@ -22,14 +22,14 @@
   <include file="$(find rc2016rvrl)/launch/spawn_p3at_RC2016.launch">
     <arg name="robot_name" value="robot2"/>
     <arg name="pose_x" value="-1"/> 
-    <arg name="pose_y" value="-11"/>
+    <arg name="pose_y" value="11"/>
     <arg name="pose_yaw" default="1.57"/>
   </include>
 
   <include file="$(find rc2016rvrl)/launch/spawn_p3at_RC2016.launch">
     <arg name="robot_name" value="robot3"/>
     <arg name="pose_x" value="-3"/> 
-    <arg name="pose_y" value="-11"/>
+    <arg name="pose_y" value="11"/>
     <arg name="pose_yaw" default="1.57"/>
   </include>
 
